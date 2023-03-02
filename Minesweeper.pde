@@ -45,7 +45,7 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
-    //your code here
+    text("GAME OVER", 200, 200);
 }
 public void displayWinningMessage()
 {
@@ -109,10 +109,8 @@ public class MSButton
         else{
           for(int i = myRow-1; i < myRow+2; i++){
             for(int j = myCol-1; j < myCol+2; j++){
-              if(isValid(i,j)){
-                myRow = i;
-                myCol = j;
-                mousePressed();
+              if(isValid(i,j) && buttons[i][j].clicked == false){
+                buttons[i][j].mousePressed();
               }
             }
           }
